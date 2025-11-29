@@ -29,23 +29,21 @@ const About = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="relative"
             >
-              <div className="glass-effect neon-border-blue rounded-2xl overflow-hidden aspect-square relative group">
-                <div className="absolute inset-0 bg-gradient-to-br from-neon-blue/20 to-neon-pink/20 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-40 h-40 mx-auto mb-4 rounded-full overflow-hidden border-2 border-neon-blue shadow-lg">
-                        <img
-                          src="public/memojiway.png"
-                          alt="Wahyudiyanto"
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
 
-                    <p className="text-foreground/60 font-body">Profile Photo</p>
-                  </div>
-                </div>
-                <div className="absolute inset-0 border-2 border-neon-blue opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl" />
-              </div>
-              
+<div className="relative aspect-square rounded-2xl overflow-hidden neon-border-blue group">
+  
+  {/* FULL IMAGE */}
+  <img 
+    src="/memojiway.png"
+    alt="Wahyudiyanto"
+    className="absolute inset-0 w-full h-full object-cover"
+  />
+
+  {/* HOVER BORDER */}
+  <div className="absolute inset-0 border-2 border-neon-blue opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl" />
+
+</div>
+
               {/* Decorative Elements */}
               <div className="absolute -top-4 -left-4 w-20 h-20 border-l-2 border-t-2 border-neon-pink rounded-tl-2xl" />
               <div className="absolute -bottom-4 -right-4 w-20 h-20 border-r-2 border-b-2 border-neon-blue rounded-br-2xl" />
