@@ -109,7 +109,7 @@ const Hero = () => {
             <Button
               size="lg"
               variant="ghost"
-              className="glass-effect border border-border text-foreground hover:neon-border-blue hover:text-neon-blue font-heading font-bold tracking-wider transition-all duration-300"
+              className="glass-effect border border-border text-foreground hover:border-neon-blue font-heading font-bold tracking-wider transition-all duration-100"
               asChild
             >
               <a href="https://github.com/Rollands-bot" target="_blank" rel="noopener noreferrer">
@@ -122,11 +122,11 @@ const Hero = () => {
       </div>
 
        <motion.div
-          className="absolute bottom-10 left-1/2 -translate-x-1/2"
+          className="absolute bottom-2 left-1/2 -translate-x-1/2"
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
         >
-          <div className="w-6 h-10 border-2 border-neon-blue rounded-full flex items-start justify-center p-2">
+          <div className="w-7 h-10 border-2 border-neon-blue rounded-full flex items-start justify-center p-2">
             <motion.div
               className="w-1.5 h-1.5 bg-neon-blue rounded-full"
               animate={{ y: [0, 20, 0] }}
