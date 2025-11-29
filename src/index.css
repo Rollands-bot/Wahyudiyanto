@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Neon Cyberpunk Theme - Dark Mode Only */
+    --background: 240 20% 5%;
+    --foreground: 0 0% 95%;
+
+    --card: 240 15% 10%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 240 15% 10%;
+    --popover-foreground: 0 0% 95%;
+
+    /* Neon Electric Blue */
+    --primary: 190 100% 50%;
+    --primary-foreground: 240 20% 5%;
+    
+    /* Neon Hot Pink */
+    --secondary: 330 100% 50%;
+    --secondary-foreground: 240 20% 5%;
+
+    --muted: 240 10% 15%;
+    --muted-foreground: 0 0% 60%;
+
+    --accent: 190 100% 50%;
+    --accent-foreground: 240 20% 5%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 95%;
+
+    --border: 240 10% 20%;
+    --input: 240 10% 20%;
+    --ring: 190 100% 50%;
+
+    --radius: 0.75rem;
+
+    /* Neon Glow Colors */
+    --neon-blue: 190 100% 50%;
+    --neon-pink: 330 100% 50%;
+    --neon-cyan: 180 100% 50%;
+    --neon-purple: 270 100% 60%;
+    
+    /* Glass Effect */
+    --glass-bg: 240 15% 10%;
+    --glass-border: 240 10% 25%;
+    
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+    font-family: 'Rajdhani', sans-serif;
+    overflow-x: hidden;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+  }
+}
+
+@layer utilities {
+  /* Neon Glow Effects */
+  .neon-glow-blue {
+    text-shadow: 0 0 10px hsl(var(--neon-blue)), 0 0 20px hsl(var(--neon-blue)), 0 0 30px hsl(var(--neon-blue));
+  }
+  
+  .neon-glow-pink {
+    text-shadow: 0 0 10px hsl(var(--neon-pink)), 0 0 20px hsl(var(--neon-pink)), 0 0 30px hsl(var(--neon-pink));
+  }
+  
+  .neon-border-blue {
+    border: 2px solid hsl(var(--neon-blue));
+    box-shadow: 0 0 10px hsl(var(--neon-blue) / 0.5), inset 0 0 10px hsl(var(--neon-blue) / 0.2);
+  }
+  
+  .neon-border-pink {
+    border: 2px solid hsl(var(--neon-pink));
+    box-shadow: 0 0 10px hsl(var(--neon-pink) / 0.5), inset 0 0 10px hsl(var(--neon-pink) / 0.2);
+  }
+  
+  /* Glassmorphism */
+  .glass-effect {
+    background: hsl(var(--glass-bg) / 0.4);
+    backdrop-filter: blur(10px);
+    border: 1px solid hsl(var(--glass-border) / 0.2);
+    box-shadow: 0 8px 32px 0 rgba(0, 240, 255, 0.1);
+  }
+  
+  /* Cyberpunk Grid Background */
+  .cyber-grid {
+    background-image: 
+      linear-gradient(hsl(var(--neon-blue) / 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--neon-blue) / 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+  
+  /* Scan Lines Effect */
+  .scan-lines::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.15),
+      rgba(0, 0, 0, 0.15) 1px,
+      transparent 1px,
+      transparent 2px
+    );
+    pointer-events: none;
+    z-index: 1;
+  }
+  
+  /* Smooth Scroll */
+  html {
+    scroll-behavior: smooth;
+  }
+}
